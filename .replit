@@ -16,4 +16,4 @@ mode = "parallel"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "bash start_servers.sh"
+args = "bash attached_assets/run_all.sh"
