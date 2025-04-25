@@ -10,14 +10,11 @@ export NODE_ENV=development
 
 # Start Express server in the background
 echo "[1/2] Démarrage du serveur Express (port 5000)..."
-cd ../ && npm run start &
+npm run dev &
 
-# Give Express some time to start
+# Wait for Express server to start
 sleep 3
 
 # Start Flask server
 echo "[2/2] Démarrage du serveur Flask (port 5001)..."
 cd FlaskServer && python app.py &
-
-# Note: To stop these processes you may need to manually kill them.
-
