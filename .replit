@@ -5,3 +5,15 @@ channel = "stable-24_05"
 
 [deployment]
 deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "Deploy and Run Servers"
+
+[[workflows.workflow]]
+name = "Deploy and Run Servers"
+author = 39699562
+mode = "parallel"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash start_servers.sh"
