@@ -14,8 +14,12 @@ runButton = "Deploy and Run Servers"
 [[workflows.workflow]]
 name = "Deploy and Run Servers"
 author = 39699562
-mode = "parallel"
+mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "bash attached_assets/run_all.sh"
+args = "run = \"bash attached_assets/run_all.sh\" language = \"bash\" entrypoint = \"attached_assets/run_all.sh\"  [interpreter] command = [\"bash\"]"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Deploy and Run Servers"
