@@ -1,10 +1,12 @@
 modules = ["python-3.12", "nodejs-20", "web", "bash"]
+run = "python app.py"
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
 deploymentTarget = "cloudrun"
+run = ["sh", "-c", "python app.py"]
 
 [workflows]
 runButton = "Deploy and Run Servers"
